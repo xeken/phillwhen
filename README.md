@@ -1,4 +1,4 @@
-# medi
+# PhillWhen
 
 A new Flutter application.
 
