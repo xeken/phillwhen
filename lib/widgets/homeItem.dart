@@ -5,10 +5,10 @@ import 'badge.dart';
 
 class HomeItem extends StatefulWidget {
   final String title;
-  final List<Widget> listItems;
+  final Widget child;
   final String badgeText;
 
-  HomeItem({this.title, this.listItems, this.badgeText});
+  HomeItem({this.title, this.child, this.badgeText});
 
   @override
   _HomeItemState createState() => _HomeItemState();
@@ -31,18 +31,7 @@ class _HomeItemState extends State<HomeItem> {
               children: badge..add(Text(widget.title, style: Theme.of(context).textTheme.caption))
             ),
           ),
-          SizedBox(
-            height: 200.0,
-            child: ScrollConfiguration(
-              behavior: EmptyScrollBehavior(),
-              // TODO: BOB - ListView 고정말고, 그냥 child 로 받자.
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 20.0),
-                children: widget.listItems
-              ),
-            )
-          )
+          widget.child
         ]
       ),
     );
