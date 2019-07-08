@@ -12,11 +12,12 @@ class MyApp extends StatelessWidget {
       theme: new ThemeData(
           primarySwatch: Colors.red,
           primaryColor: Colors.white,
+          highlightColor: Colors.red,
           canvasColor: Colors.white,
           unselectedWidgetColor: Color.fromRGBO(0x3E, 0x3F, 0x61, 1.0),
           textTheme: TextTheme(
               title: TextStyle(fontFamily: 'NotoSansKR', color: Color.fromRGBO(0x3E, 0x3F, 0x61, 1.0), fontWeight: FontWeight.w900, fontSize: 35.0),
-              caption: TextStyle(fontFamily: 'NotoSansKR', color: Color.fromRGBO(0x5A, 0x61, 0x7A, 1.0), fontSize: 17.0),
+              caption: TextStyle(fontFamily: 'NotoSansKR', color: Color.fromRGBO(0x5A, 0x61, 0x7A, 1.0), fontWeight: FontWeight.w600, fontSize: 17.0),
               body1: TextStyle(fontFamily: 'NotoSansKR', color: Color.fromRGBO(0x5A, 0x61, 0x7A, 1.0), fontSize: 17.0),
               body2: TextStyle(fontFamily: 'NotoSansKR', color: Colors.black, fontSize: 15.0),
               display1: TextStyle(fontFamily: 'NotoSansKR', color: Colors.black),
@@ -25,7 +26,8 @@ class MyApp extends StatelessWidget {
               display4: TextStyle(fontFamily: 'NotoSansKR', color: Colors.black),
               headline: TextStyle(fontFamily: 'NotoSansKR', color: Colors.black),
               subhead: TextStyle(fontFamily: 'NotoSansKR', color: Colors.black),
-              button: TextStyle(fontFamily: 'NotoSansKR', color: Colors.black)
+              button: TextStyle(fontFamily: 'NotoSansKR', color: Colors.black),
+
           )
       ),
     );
@@ -66,53 +68,50 @@ class _MainState extends State<Main> {
 //      ),
         backgroundColor: Theme.of(context).primaryColor,
         body: Container(
-          padding: EdgeInsets.symmetric(horizontal: 30.0),
           child: _pages.elementAt(_selectedIndex),
         ),
-        bottomNavigationBar: SizedBox(
-          height: 60.0,
-          child: Container(
-            decoration: BoxDecoration(
-              boxShadow: [
-                BoxShadow(
-                  blurRadius: 20.0,
-                  spreadRadius: 5.0,
-                  color: Color.fromRGBO(0, 0, 0, 0.05)
-                )
-              ]
-            ),
-            child: BottomNavigationBar(
-              backgroundColor: Theme.of(context).primaryColor,
-              type: BottomNavigationBarType.shifting,
-              elevation: 0.0,
-              items: <BottomNavigationBarItem>[
-                BottomNavigationBarItem(
-                  icon: Icon(FontAwesomeIcons.home),
+        bottomNavigationBar:
+        Container(
+          decoration: BoxDecoration(
+            boxShadow: [
+              BoxShadow(
+                blurRadius: 20.0,
+                spreadRadius: 5.0,
+                color: Color.fromRGBO(0, 0, 0, 0.05)
+              )
+            ]
+          ),
+          child: BottomNavigationBar(
+            backgroundColor: Theme.of(context).primaryColor,
+            type: BottomNavigationBarType.shifting,
+            elevation: 0.0,
+            items: <BottomNavigationBarItem>[
+              BottomNavigationBarItem(
+                icon: Icon(FontAwesomeIcons.home),
+                title: Text('')
+              ),
+              BottomNavigationBarItem(
+                  icon: Icon(FontAwesomeIcons.solidCalendar),
                   title: Text('')
-                ),
-                BottomNavigationBarItem(
-                    icon: Icon(FontAwesomeIcons.solidCalendar),
-                    title: Text('')
-                ),
-                BottomNavigationBarItem(
-                    icon: Icon(FontAwesomeIcons.pills),
-                    title: Text('')
-                ),
-                BottomNavigationBarItem(
-                    icon: Icon(FontAwesomeIcons.userFriends),
-                    title: Text('')
-                ),
-                BottomNavigationBarItem(
-                    icon: Icon(FontAwesomeIcons.cog),
-                    title: Text('')
-                )
-              ],
-              currentIndex: _selectedIndex,
-              unselectedItemColor: Theme.of(context).unselectedWidgetColor,
-              selectedItemColor: Colors.red,
-              onTap: _onItemTapped,
-              showSelectedLabels: false,
-            ),
+              ),
+              BottomNavigationBarItem(
+                  icon: Icon(FontAwesomeIcons.pills),
+                  title: Text('')
+              ),
+              BottomNavigationBarItem(
+                  icon: Icon(FontAwesomeIcons.userFriends),
+                  title: Text('')
+              ),
+              BottomNavigationBarItem(
+                  icon: Icon(FontAwesomeIcons.cog),
+                  title: Text('')
+              )
+            ],
+            currentIndex: _selectedIndex,
+            unselectedItemColor: Theme.of(context).unselectedWidgetColor,
+            selectedItemColor: Colors.red,
+            onTap: _onItemTapped,
+            showSelectedLabels: false,
           ),
         ),
       )
