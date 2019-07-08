@@ -15,7 +15,7 @@ class Badge extends StatefulWidget {
 class _BadgeState extends State<Badge> {
   @override
   Widget build(BuildContext context) {
-    var backgroundColor = widget.backgroundColor == null ? Theme.of(context).highlightColor : widget.backgroundColor;
+    var backgroundColor = widget.backgroundColor == null ? Theme.of(context).colorScheme.primary : widget.backgroundColor;
     return Container(
       constraints: BoxConstraints(minWidth: widget.minWidth),
       height: widget.height,
