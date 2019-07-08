@@ -1,4 +1,4 @@
-# PillWhen
+# PhillWhen
 
 A new Flutter application.
 
