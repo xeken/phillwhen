@@ -22,6 +22,7 @@ class _MainState extends State<Main> {
   int _selectedIndex = 0;
   static const TextStyle pageStyle = TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _pages = <Widget>[
+
     Text('INDEX 0', style: pageStyle,),
     Text('INDEX 1', style: pageStyle,),
     Text('INDEX 2', style: pageStyle,),
@@ -37,7 +38,7 @@ class _MainState extends State<Main> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Philsy"),
+        title: Text("pillWhen"),
       ),
       body: Container(
         child: _pages.elementAt(_selectedIndex),
