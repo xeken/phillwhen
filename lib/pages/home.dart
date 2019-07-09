@@ -92,7 +92,7 @@ class _HomeState extends State<Home> {
                 padding: const EdgeInsets.symmetric(horizontal: 30.0, vertical: 20.0),
                 child: Column(
                   children: <Widget>[
-                    PwCard(child: PeopleItem(image: Image.network('https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/32508762_606806973014817_9098627413276884992_o.jpg?_nc_cat=101&_nc_oc=AQm3rfLuQFqNXWTwzKesqM860EJMhtOTraxwhypoUE9-qU2t9z8I3liU9CF7_NEFcDk&_nc_ht=scontent-icn1-1.xx&oh=95bb70124ab9a7e5f4869b16316b3c74&oe=5D79DE07').image, name: '김대용', desc: '24분 늦음',)),
+                    PwCard(onTap: (){}, child: PeopleItem(image: Image.network('https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/32508762_606806973014817_9098627413276884992_o.jpg?_nc_cat=101&_nc_oc=AQm3rfLuQFqNXWTwzKesqM860EJMhtOTraxwhypoUE9-qU2t9z8I3liU9CF7_NEFcDk&_nc_ht=scontent-icn1-1.xx&oh=95bb70124ab9a7e5f4869b16316b3c74&oe=5D79DE07').image, name: '김대용', desc: '24분 늦음',)),
                     Padding(padding:EdgeInsets.only(top: 10.0)),
                     PwCard(child: PeopleItem(image: Image.network('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDx00Ipz5DFjyCa_o5wtLPUf9AlnIpnYIUD-Kek1Jj-KJ4a6XQ3Q').image, name: '김대용', desc: 'OK',)),
                     Padding(padding:EdgeInsets.only(top: 10.0)),
