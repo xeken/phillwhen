@@ -21,8 +21,8 @@ class _PeopleItemState extends State<PeopleItem> {
             width: 50.0,
             height: 50.0,
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(25.0)),
-                image: DecorationImage(image: widget.image)
+              borderRadius: BorderRadius.all(Radius.circular(25.0)),
+              image: DecorationImage(image: widget.image)
             ),
           ),
           Padding(padding: EdgeInsets.only(left: 10.0),),
