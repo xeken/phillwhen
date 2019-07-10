@@ -95,55 +95,55 @@ class _MainState extends State<Main> {
 //        backgroundColor: Colors.white,
 //        elevation: 0.0,
 //      ),
-      backgroundColor: Theme.of(context).primaryColor,
-      body: Container(
-        child: _pages.elementAt(_selectedIndex),
-      ),
-      bottomNavigationBar:
-      Container(
-        decoration: BoxDecoration(
+        backgroundColor: Theme.of(context).primaryColor,
+        body: Container(
+          child: _pages.elementAt(_selectedIndex),
+        ),
+        bottomNavigationBar:
+        Container(
+          decoration: BoxDecoration(
             boxShadow: [
               BoxShadow(
-                  blurRadius: 20.0,
-                  spreadRadius: 5.0,
-                  color: Color.fromRGBO(0, 0, 0, 0.05)
+                blurRadius: 20.0,
+                spreadRadius: 5.0,
+                color: Color.fromRGBO(0, 0, 0, 0.05)
               )
             ]
-        ),
-        child: BottomNavigationBar(
-          backgroundColor: Theme.of(context).primaryColor,
-          type: BottomNavigationBarType.shifting,
-          elevation: 0.0,
-          items: <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
+          ),
+          child: BottomNavigationBar(
+            backgroundColor: Theme.of(context).primaryColor,
+            type: BottomNavigationBarType.shifting,
+            elevation: 0.0,
+            items: <BottomNavigationBarItem>[
+              BottomNavigationBarItem(
                 icon: Icon(FontAwesomeIcons.home),
                 title: Text('')
-            ),
-            BottomNavigationBarItem(
-                icon: Icon(FontAwesomeIcons.solidCalendar),
-                title: Text('')
-            ),
-            BottomNavigationBarItem(
-                icon: Icon(FontAwesomeIcons.pills),
-                title: Text('')
-            ),
-            BottomNavigationBarItem(
-                icon: Icon(FontAwesomeIcons.userFriends),
-                title: Text('')
-            ),
-            BottomNavigationBarItem(
-                icon: Icon(FontAwesomeIcons.cog),
-                title: Text('')
-            )
-          ],
-          currentIndex: _selectedIndex,
-          unselectedItemColor: Theme.of(context).unselectedWidgetColor,
-          selectedItemColor: Colors.red,
-          onTap: _onItemTapped,
-          showSelectedLabels: false,
+              ),
+              BottomNavigationBarItem(
+                  icon: Icon(FontAwesomeIcons.solidCalendar),
+                  title: Text('')
+              ),
+              BottomNavigationBarItem(
+                  icon: Icon(FontAwesomeIcons.pills),
+                  title: Text('')
+              ),
+              BottomNavigationBarItem(
+                  icon: Icon(FontAwesomeIcons.userFriends),
+                  title: Text('')
+              ),
+              BottomNavigationBarItem(
+                  icon: Icon(FontAwesomeIcons.cog),
+                  title: Text('')
+              )
+            ],
+            currentIndex: _selectedIndex,
+            unselectedItemColor: Theme.of(context).unselectedWidgetColor,
+            selectedItemColor: Colors.red,
+            onTap: _onItemTapped,
+            showSelectedLabels: false,
+          ),
         ),
-      ),
-    )
+      )
     );
   }
 }
