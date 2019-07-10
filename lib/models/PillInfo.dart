@@ -1,4 +1,7 @@
 class PillInfo {
-  List<DateTime> pillLog;
-  List<DateTime> pillEat;
+
+  int key;
+  DateTime time;
+  int pillCount;
+  int remainingPills;
 }

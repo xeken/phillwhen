@@ -29,18 +29,11 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   void initState() {
     super.initState();
     _selectedDay = DateTime.now();
+    var _sss = new DateTime(2019, 7, 3);
     _events = {
-      _selectedDay.subtract(Duration(days: 1)): [
-        '아침         ○',
-        '점심         ×',
-        '저녁         ○'
-      ], // 어제
-      _selectedDay: ['아침         ○', '점심         ○', '저녁         마다마다'], // 오늘 , 해상도 테스트는 안 해봤다만 마커표사는 한 날에 최대 4개인 것으로 판단
-      _selectedDay.add(Duration(days: 1)):
-          Set.from(['아침         마다마다', '점심         마다마다', '저녁         마다마다']).toList(), //중복제거 방식
-      _selectedDay.add(Duration(days: 2)): ['쾌유빔'],
+      _sss: ['asd'],
     };
-    _selectedEvents = _events[_selectedDay] ?? [];
+    _selectedEvents = _events[_selectedDay] ?? []; //if (==null) 후자를 반환
     _visibleEvents = _events;
   }
 
@@ -85,10 +78,6 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
     return ListView(
       children: _selectedEvents
           .map((event) => Container(
-                decoration: BoxDecoration(
-                  border: Border.all(width: 0.8),
-                  borderRadius: BorderRadius.circular(12.0),
-                ),
                 margin: const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
                 child: PwCard(
                   child: Text("복용 여부"),
