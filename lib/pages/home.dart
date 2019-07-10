@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:medi/behaviors/emptyScrollBehavior.dart';
-import 'package:medi/widgets/peopleItem.dart';
-import 'package:medi/widgets/card.dart';
-import 'package:medi/widgets/homeItem.dart';
+import 'package:pillwhen/behaviors/emptyScrollBehavior.dart';
+import 'package:pillwhen/widgets/peopleItem.dart';
+import 'package:pillwhen/widgets/card.dart';
+import 'package:pillwhen/widgets/homeItem.dart';
 
 class Home extends StatefulWidget {
   @override
