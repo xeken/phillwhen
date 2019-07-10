@@ -30,13 +30,13 @@ class PwCard extends StatefulWidget {
     this.onTapCancel,
     this.onTapDown
   }) : assert(child != null),
-      assert(padding != null),
-      assert(borderRadius != null),
-      constraints =
-      (width != null || height != null)
-          ? constraints?.tighten(width: width, height: height)
-          ?? BoxConstraints.tightFor(width: width, height: height)
-          : constraints;
+        assert(padding != null),
+        assert(borderRadius != null),
+        constraints =
+        (width != null || height != null)
+            ? constraints?.tighten(width: width, height: height)
+            ?? BoxConstraints.tightFor(width: width, height: height)
+            : constraints;
 
   @override
   _PwCardState createState() => _PwCardState();
@@ -49,28 +49,28 @@ class _PwCardState extends State<PwCard> {
     var shadowColor = widget.shadowColor == null ? Theme.of(context).primaryColorDark : widget.shadowColor;
 
     return Container(
-      constraints: widget.constraints,
-      decoration: BoxDecoration(
-        borderRadius: widget.borderRadius,
-        boxShadow: [BoxShadow(color: shadowColor, blurRadius: 15.0, offset: Offset(0.0, 8.0))],
-        color: backgroundColor,
-      ),
-      child: Material(
-        color: Colors.transparent,
-        shape: RoundedRectangleBorder(borderRadius: widget.borderRadius),
-        child: InkWell(
-          onTap: widget.onTap,
-          onLongPress: widget.onLongPress,
-          onDoubleTap: widget.onDoubleTap,
-          onTapDown: widget.onTapDown,
-          onTapCancel: widget.onTapCancel,
+        constraints: widget.constraints,
+        decoration: BoxDecoration(
           borderRadius: widget.borderRadius,
-          child: Container(
-            padding: widget.padding,
-            child: widget.child,
-          ),
+          boxShadow: [BoxShadow(color: shadowColor, blurRadius: 15.0, offset: Offset(0.0, 8.0))],
+          color: backgroundColor,
         ),
-      )
+        child: Material(
+          color: Colors.transparent,
+          shape: RoundedRectangleBorder(borderRadius: widget.borderRadius),
+          child: InkWell(
+            onTap: widget.onTap,
+            onLongPress: widget.onLongPress,
+            onDoubleTap: widget.onDoubleTap,
+            onTapDown: widget.onTapDown,
+            onTapCancel: widget.onTapCancel,
+            borderRadius: widget.borderRadius,
+            child: Container(
+              padding: widget.padding,
+              child: widget.child,
+            ),
+          ),
+        )
     );
   }
 }

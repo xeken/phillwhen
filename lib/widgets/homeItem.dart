@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medi/behaviors/emptyScrollBehavior.dart';
+import 'package:pillwhen/behaviors/emptyScrollBehavior.dart';
 
 import 'badge.dart';
 
@@ -28,7 +28,7 @@ class _HomeItemState extends State<HomeItem> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal:30.0).copyWith(top: 10.0),
             child: Row(
-              children: badge..add(Text(widget.title, style: Theme.of(context).textTheme.caption))
+                children: badge..add(Text(widget.title, style: Theme.of(context).textTheme.caption))
             ),
           ),
           widget.child

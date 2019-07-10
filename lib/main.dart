@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:pillwhen/pages/home.dart';
-import 'package:pillwhen/pages/people.dart';
+import 'pages/Calendar.dart';
+import 'pages/People.dart';
+import 'pages/home.dart';
+import 'pages/MyPill.dart';
 
 void main() => runApp(MyApp());
 
@@ -72,9 +74,9 @@ class _MainState extends State<Main> {
   static const TextStyle pageStyle = TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static List<Widget> _pages = <Widget>[
     Home(),
-    Text('캘린더', style: pageStyle,),
-    Text('약', style: pageStyle,),
-    people(),
+    Calendar(),
+    MyPill(),
+    People(),
     Text('설정', style: pageStyle,),
   ];
 
