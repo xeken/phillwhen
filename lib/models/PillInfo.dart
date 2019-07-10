@@ -1,7 +1,9 @@
+import 'package:flutter/material.dart';
+
 class PillInfo {
 
   int key;
-  DateTime time;
+  TimeOfDay time;
   int pillCount;
   int remainingPills;
 }
