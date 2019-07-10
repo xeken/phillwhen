@@ -40,8 +40,8 @@ class _PeopleState extends State<People> {
             child:Text('즐겨찾는 사람들', style: Theme.of(context).textTheme.title),
           ),
           Column(
-              children:profile,
-            ),
+            children:profile,
+          ),
 
         ],
       ),
