@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'models/User.dart';
 import 'pages/Calendar.dart';
 import 'pages/People.dart';
 import 'pages/home.dart';
@@ -69,16 +70,25 @@ class Main extends StatefulWidget {
 }
 
 class _MainState extends State<Main> {
+  User _user;
 
   int _selectedIndex = 0;
   static const TextStyle pageStyle = TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static List<Widget> _pages = <Widget>[
-    Home(),
-    Calendar(),
-    MyPill(),
-    People(),
-    Text('설정', style: pageStyle,),
-  ];
+  static List<Widget> _pages;
+
+  @override
+  void initState() {
+    super.initState();
+    _user = dummyUser();
+
+    _pages = <Widget>[
+      Home(),
+      Calendar(pillHistories: _user.pillHistories,),
+      MyPill(),
+      People(),
+      Text('설정', style: pageStyle,),
+    ];
+  }
 
   void _onItemTapped(int index){
     setState(() {
