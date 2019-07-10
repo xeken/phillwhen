@@ -4,7 +4,9 @@ import 'package:pillwhen/behaviors/emptyScrollBehavior.dart';
 import 'package:pillwhen/widgets/peopleItem.dart';
 import 'package:pillwhen/widgets/card.dart';
 import 'package:pillwhen/widgets/homeItem.dart';
+import 'package:pillwhen/models/User.dart';
 
+import 'UserInfo.dart';
 class People extends StatefulWidget {
   @override
   _PeopleState createState() => _PeopleState();
@@ -15,9 +17,17 @@ class _PeopleState extends State<People> {
   Widget build(BuildContext context) {
     var profile = <Widget>[];
     var profiles = <String>["김대용","김동현","예두해"];
+    User dummy = new User();
     for(var data in profiles)
     {
-      profile.add(PwCard(onTap:(){},child: PeopleItem(image:Image.network('https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/32508762_606806973014817_9098627413276884992_o.jpg?_nc_cat=101&_nc_oc=AQm3rfLuQFqNXWTwzKesqM860EJMhtOTraxwhypoUE9-qU2t9z8I3liU9CF7_NEFcDk&_nc_ht=scontent-icn1-1.xx&oh=95bb70124ab9a7e5f4869b16316b3c74&oe=5D79DE07').image, name:data,desc:'test',)));
+      dummy.makedata();
+      profile.add(
+          PwCard(onTap:(){var route = new MaterialPageRoute(
+            builder: (BuildContext context) =>
+            new UserInfo(name: dummy.name),
+          );
+          Navigator.of(context).push(route);
+          }, child: PeopleItem(image:Image.network(dummy.profileImageUri).image, name:dummy.name,desc:'test',)));
       profile.add(Padding(padding:EdgeInsets.only(top: 10.0)));
     }
 
