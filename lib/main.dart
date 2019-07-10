@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:medi/pages/home.dart';
+import 'package:medi/pages/people.dart';
 
 void main() => runApp(MyApp());
 
@@ -73,7 +74,7 @@ class _MainState extends State<Main> {
     Home(),
     Text('캘린더', style: pageStyle,),
     Text('약', style: pageStyle,),
-    Text('친구들(즐겨찾기)', style: pageStyle,),
+    people(),
     Text('설정', style: pageStyle,),
   ];
 
