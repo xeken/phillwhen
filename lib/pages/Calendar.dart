@@ -78,8 +78,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
 
   Widget _buildTableCalendar() {
     return TableCalendar(
-      locale: 'en_US',
-      //변경 금지
+      locale: 'en_US', //변경 금지
       events: _visibleEvents,
       holidays: _visibleHolidays,
       formatAnimation: FormatAnimation.scale,
