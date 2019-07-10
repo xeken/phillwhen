@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:pillwhen/widgets/card.dart';
-import 'package:pillwhen/widgets/homeItem.dart';
-import 'package:pillwhen/widgets/peopleItem.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 class Calendar extends StatefulWidget {
@@ -36,17 +34,12 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
         '아침         ○',
         '점심         ×',
         '저녁         ○'
-      ],
-      // 어제
-      _selectedDay: ['아침         ○', '점심         ○', '저녁         마다마다'],
-      // 오늘 , 해상도 테스트는 안 해봤다만 마커표사는 한 날에 최대 4개인 것으로 판단
+      ], // 어제
+      _selectedDay: ['아침         ○', '점심         ○', '저녁         마다마다'], // 오늘 , 해상도 테스트는 안 해봤다만 마커표사는 한 날에 최대 4개인 것으로 판단
       _selectedDay.add(Duration(days: 1)):
-          Set.from(['아침         마다마다', '점심         마다마다', '저녁         마다마다'])
-              .toList(),
-      //중복제거 방식
+          Set.from(['아침         마다마다', '점심         마다마다', '저녁         마다마다']).toList(), //중복제거 방식
       _selectedDay.add(Duration(days: 2)): ['쾌유빔'],
     };
-
     _selectedEvents = _events[_selectedDay] ?? [];
     _visibleEvents = _events;
   }
@@ -73,7 +66,8 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
 
   Widget _buildTableCalendar() {
     return TableCalendar(
-      locale: 'en_US', //변경 금지
+      locale: 'en_US',
+      //변경 금지
       events: _visibleEvents,
       formatAnimation: FormatAnimation.scale,
       startingDayOfWeek: StartingDayOfWeek.sunday,
