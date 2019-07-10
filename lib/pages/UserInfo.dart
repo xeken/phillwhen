@@ -24,24 +24,26 @@ class _UserInfoState extends State<UserInfo> {
       profile.add(Padding(padding:EdgeInsets.only(top: 10.0)));
     }
 
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 30.0),
-      child: ListView(
-        children: <Widget>[
-          Padding(
-            padding: EdgeInsets.only(top: 50.0, bottom: 25.0),
-            child:Text('${widget.name}씨의 정보', style: Theme.of(context).textTheme.title),
+    return Scaffold(
+      body: Container(
+        padding: EdgeInsets.symmetric(horizontal: 30.0),
+        child: ListView(
+          children: <Widget>[
+            Padding(
+              padding: EdgeInsets.only(top: 50.0, bottom: 25.0),
+              child:Text('${widget.name}씨의 정보', style: Theme.of(context).textTheme.title),
 
-          ),
-          Padding(
-            padding:EdgeInsets.only(top:25.0, bottom:25.0),
-            child:Text("${widget.name}씨가 즐겨찾기 중인 사람들", style:Theme.of(context).textTheme.body1)
-          ),
-          Column(
-            children: profile,
-          ),
+            ),
+            Padding(
+              padding:EdgeInsets.only(top:25.0, bottom:25.0),
+              child:Text("${widget.name}씨가 즐겨찾기 중인 사람들", style:Theme.of(context).textTheme.body1)
+            ),
+            Column(
+              children: profile,
+            ),
 
-        ],
+          ],
+        ),
       ),
     );
   }
