@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:pillwhen/pages/Calendar.dart';
-import 'package:pillwhen/pages/home.dart';
+import 'pages/Calendar.dart';
+import 'pages/People.dart';
+import 'pages/home.dart';
+import 'pages/MyPill.dart';
 
 void main() => runApp(MyApp());
 
@@ -73,8 +75,8 @@ class _MainState extends State<Main> {
   static List<Widget> _pages = <Widget>[
     Home(),
     Calendar(),
-    Text('약', style: pageStyle,),
-    Text('친구들(즐겨찾기)', style: pageStyle,),
+    MyPill(),
+    People(),
     Text('설정', style: pageStyle,),
   ];
 
