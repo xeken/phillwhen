@@ -24,15 +24,15 @@ class _HomeItemState extends State<HomeItem> {
 
     return Container(
       child: Column(
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal:30.0).copyWith(top: 10.0),
-              child: Row(
-                  children: badge..add(Text(widget.title, style: Theme.of(context).textTheme.caption))
-              ),
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal:30.0).copyWith(top: 10.0),
+            child: Row(
+                children: badge..add(Text(widget.title, style: Theme.of(context).textTheme.caption))
             ),
-            widget.child
-          ]
+          ),
+          widget.child
+        ]
       ),
     );
   }
