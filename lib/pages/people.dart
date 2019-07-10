@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:medi/behaviors/emptyScrollBehavior.dart';
-import 'package:medi/widgets/peopleItem.dart';
-import 'package:medi/widgets/card.dart';
-import 'package:medi/widgets/homeItem.dart';
+import 'package:pillwhen/behaviors/emptyScrollBehavior.dart';
+import 'package:pillwhen/widgets/peopleItem.dart';
+import 'package:pillwhen/widgets/card.dart';
+import 'package:pillwhen/widgets/homeItem.dart';
 
-class people extends StatefulWidget {
+class People extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() => _PeopleState();
+  _PeopleState createState() => _PeopleState();
 }
 
-class _PeopleState extends State<people> {
-
+class _PeopleState extends State<People> {
   @override
   Widget build(BuildContext context) {
     var profile = <Widget>[];
@@ -39,5 +38,3 @@ class _PeopleState extends State<people> {
     );
   }
 }
-
-
