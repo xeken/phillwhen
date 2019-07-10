@@ -73,7 +73,7 @@ class _MainState extends State<Main> {
   static List<Widget> _pages = <Widget>[
     Home(),
     Calendar(),
-    Text('약', style: pageStyle,),
+    Text('약 관리', style: pageStyle,),
     Text('친구들(즐겨찾기)', style: pageStyle,),
     Text('설정', style: pageStyle,),
   ];
