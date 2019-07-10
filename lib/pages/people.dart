@@ -22,12 +22,12 @@ class _PeopleState extends State<People> {
     }
 
     return Container(
+      padding: EdgeInsets.symmetric(horizontal: 30.0),
       child: ListView(
         children: <Widget>[
           Padding(
-            padding: EdgeInsets.only(top: 50.0),
-            child:Text('즐겨찾는 사람들', style: TextStyle(fontSize: 25.0)),
-
+            padding: EdgeInsets.only(top: 50.0, bottom: 25.0),
+            child:Text('즐겨찾는 사람들', style: Theme.of(context).textTheme.title),
           ),
           Column(
               children:profile,
