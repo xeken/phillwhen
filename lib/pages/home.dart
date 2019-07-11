@@ -79,15 +79,15 @@ class _HomeState extends State<Home> {
                             .copyWith(bottom: 25.0),
                     children: <Widget>[
                       PwCard(
-                        child: Text('asdlkfjasdlkfjas'),
+                        child: Text('감기약 세 알\n아침 7:30'),
                       ),
                       Padding(padding: EdgeInsets.only(right: 10.0)),
                       PwCard(
-                        child: Text('asdlkfjasdlkfjas'),
+                        child: Text('감기약 세 알 \n비타민제 세 알\n점심 12:00'),
                       ),
                       Padding(padding: EdgeInsets.only(right: 10.0)),
                       PwCard(
-                        child: Text('asdlkfjasdlkfjas'),
+                        child: Text('감기약 세 알'),
                       ),
                     ],
                   ),

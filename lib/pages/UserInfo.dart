@@ -95,7 +95,7 @@ class _UserInfoState extends State<UserInfo> {
               children: profile,
             ),
             Padding(
-              padding:EdgeInsets.only(top:25.0, bottom:25.0),
+              padding:EdgeInsets.only(top:25.0, bottom:15.0),
               child:Text("${widget.name}씨의 약일정", style:Theme.of(context).textTheme.body1)
             ),
             Padding(
