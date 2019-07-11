@@ -1,12 +1,12 @@
-
 import 'package:flutter/material.dart';
-import 'package:pillwhen/models/MyPillInfo.dart';
+import 'package:pillwhen/models/PillInfo.dart';
 
 class MyPillAddInfo extends StatefulWidget {
+  final PillInfo pillInfo;
+  final List<PillInfo> pillInfoList;
 
-  final MyPillInfo myPillInfo;
-
-  const MyPillAddInfo({Key key, this.myPillInfo}) : super(key: key);
+  const MyPillAddInfo({Key key, this.pillInfo, this.pillInfoList})
+      : super(key: key);
 
   @override
   _MyPillAddInfoState createState() => _MyPillAddInfoState();
@@ -15,6 +15,22 @@ class MyPillAddInfo extends StatefulWidget {
 class _MyPillAddInfoState extends State<MyPillAddInfo> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      body: Container(
+        child: ListView(
+          children: <Widget>[
+            TextField(
+              decoration: InputDecoration(hintText: '별명'),
+            ),
+            TextField(
+              decoration: InputDecoration(hintText: '약 갯수'),
+            ),
+            TextField(
+              decoration: InputDecoration(hintText: '시간'),
+            )
+          ],
+        ),
+      ),
+    );
   }
 }
