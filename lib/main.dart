@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'models/User.dart';
 import 'pages/Calendar.dart';
-import 'pages/PeopleInfo.dart';
+import 'pages/Peopleinfo.dart';
 import 'pages/home.dart';
 import 'pages/MyPill.dart';
 
