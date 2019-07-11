@@ -3,13 +3,15 @@ import 'package:pillwhen/models/User.dart';
 
 import 'package:flutter_cupertino_date_picker/flutter_cupertino_date_picker.dart';
 import 'package:intl/intl.dart';
+import 'package:pillwhen/utils/network_manager.dart';
 
 class MyPillAddInfo extends StatefulWidget {
+  final User user;
   final PillInfo pillInfo;
   final Set<PillInfo> pillInfoList;
   final String btnText;
 
-  const MyPillAddInfo({Key key, this.pillInfo, this.pillInfoList, this.btnText}) : super(key: key);
+  const MyPillAddInfo({Key key, this.user, this.pillInfo, this.pillInfoList, this.btnText}) : super(key: key);
 
 
   @override
@@ -23,6 +25,8 @@ class _MyPillAddInfoState extends State<MyPillAddInfo> {
 
   DateTimePickerLocale _locale = DateTimePickerLocale.en_us;
   DateTime _dateTime;
+
+  NetworkManager networkManager;
 
   @override
   void initState() {
@@ -103,6 +107,7 @@ class _MyPillAddInfoState extends State<MyPillAddInfo> {
                 pillInfo.remainEat = int.parse(countController.text);
                 pillInfo.time = _dateTime;
                 widget.pillInfoList.add(pillInfo);
+                networkManager.insertPillInfo(pillInfo, widget.user.code);
                 Navigator.pop(context);
               },
               elevation: 8.0,

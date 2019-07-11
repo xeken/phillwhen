@@ -19,7 +19,12 @@ class _MyPillState extends State<MyPill> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(
+        padding: EdgeInsets.symmetric(horizontal: 30.0),
         children: <Widget>[
+          Padding(
+            padding: EdgeInsets.only(top: 50.0, bottom: 25.0),
+            child:Text('내가 복용중인 약', style: Theme.of(context).textTheme.title),
+          ),
           SizedBox(
             height: 200,
             child: ScrollConfiguration(

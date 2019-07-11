@@ -65,7 +65,7 @@ class NetworkManager {
     return Dio();
   }
 
-  Future<User> getUser(String code) async {
+  User getUser(String code) {
 //    var response = await _request(_createURL(USER_URL + "/$code"), Method.GET);
 //    var responseData = User.fromJson(response.data);
     var responseData = User.fromJson(json.decode(j));

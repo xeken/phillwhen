@@ -7,6 +7,7 @@ import 'package:pillwhen/widgets/homeItem.dart';
 import 'package:pillwhen/models/User.dart';
 
 import 'UserInfo.dart';
+
 class People extends StatefulWidget {
   @override
   _PeopleState createState() => _PeopleState();
@@ -16,7 +17,7 @@ class _PeopleState extends State<People> {
   @override
   Widget build(BuildContext context) {
     var profile = <Widget>[];
-    var profiles = <String>["김대용","김동현","예두해"];
+    var profiles = <String>["김대용", "김동현", "예두해"];
 
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 30.0),
@@ -24,12 +25,11 @@ class _PeopleState extends State<People> {
         children: <Widget>[
           Padding(
             padding: EdgeInsets.only(top: 50.0, bottom: 25.0),
-            child:Text('즐겨찾는 사람들', style: Theme.of(context).textTheme.title),
+            child: Text('즐겨찾는 사람들', style: Theme.of(context).textTheme.title),
           ),
           Column(
-            children:profile,
+            children: profile,
           ),
-
         ],
       ),
     );

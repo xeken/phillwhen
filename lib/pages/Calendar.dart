@@ -170,7 +170,7 @@ class _CalendarState extends State<Calendar> with TickerProviderStateMixin {
       margin: const EdgeInsets.symmetric(horizontal: 30).copyWith(
           bottom: 10.0),
       child: PwCard(
-        child: Text(pillInfo.remainingPills.toString()),
+        child: Text(pillInfo.remainEat.toString()),
       ),
     );
 

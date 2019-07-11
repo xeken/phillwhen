@@ -81,16 +81,15 @@ class _MainState extends State<Main> {
   NetworkManager networkManager = new NetworkManager();
 
   @override
-  void initState() async {
+  void initState() {
     super.initState();
-    _user = await networkManager.getUser('i12821');
+    _user = networkManager.getUser('i12821');
 
     _pages = <Widget>[
       Home(),
       Calendar(pillHistories: _user.pillHistories,),
       MyPill(),
-      PeopleInfo(),
-      MyPillAddInfo()
+      PeopleInfo()
     ];
 }
 
@@ -143,10 +142,6 @@ class _MainState extends State<Main> {
               ),
               BottomNavigationBarItem(
                   icon: Icon(FontAwesomeIcons.userFriends),
-                  title: Text('')
-              ),
-              BottomNavigationBarItem(
-                  icon: Icon(FontAwesomeIcons.cog),
                   title: Text('')
               )
             ],
