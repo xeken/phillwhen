@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pillwhen/models/User.dart';
+import 'package:pillwhen/utils/network_manager.dart';
 import 'package:pillwhen/widgets/card.dart';
 import 'package:pillwhen/widgets/peopleItem.dart';
 import 'package:table_calendar/table_calendar.dart';
@@ -12,8 +13,9 @@ enum CalendarStatus {
 
 class UserInfo extends StatefulWidget {
   final String name;
+  final User user;
 
-  UserInfo({Key key, this.name}) : super(key: key);
+  UserInfo({Key key, this.name, this.user}) : super(key: key);
   @override
   _UserInfoState createState() => _UserInfoState();
 }
@@ -26,13 +28,17 @@ class _UserInfoState extends State<UserInfo> {
   Map<DateTime, List> _visibleEvents;
   List _selectedEvents;
 
-  User dummy = dummyUser();
+  @override
+  void initState() async {
+    // TODO: implement initState
+    super.initState();
+  }
 
   void initEvents() {
     _events = {};
-    for(var history in dummy.pillHistories) {
-      print(removeHMS(history.date));
-      _events[removeHMS(history.date)] = [history];
+    for(var history in widget.user.pillHistories) {
+      print(removeHMS(history.time));
+      _events[removeHMS(history.time)] = [history];
     }
   }
 
@@ -50,11 +56,11 @@ class _UserInfoState extends State<UserInfo> {
 
     List<String> eat = [];
 
-    eat.add(dummy.pillHistories[0].morningStatus ? "먹음".toString() : "안먹음".toString() );
-    eat.add(dummy.pillHistories[0].lunchStatus ? "먹음".toString() : "안먹음".toString() );
-    eat.add(dummy.pillHistories[0].dinnerStatus ? "먹음".toString() : "안먹음".toString() );
+    eat.add(widget.user.pillHistories[0].isEatMorning ? "먹음".toString() : "안먹음".toString() );
+    eat.add(widget.user.pillHistories[0].isEatLunch ? "먹음".toString() : "안먹음".toString() );
+    eat.add(widget.user.pillHistories[0].isEatDinner ? "먹음".toString() : "안먹음".toString() );
 
-    profile.add(PwCard(onTap:(){}, child: PeopleItem(image:Image.network(dummy.profileImageUri).image, name:dummy.name,desc:'아침 : ${eat[0]} \n점심 : ${eat[1]} \n저녁 : ${eat[2]}',)));
+    profile.add(PwCard(onTap:(){}, child: PeopleItem(image:Image.network(widget.user.profilePictureUri).image, name: widget.user.name,desc:'아침 : ${eat[0]} \n점심 : ${eat[1]} \n저녁 : ${eat[2]}',)));
     profile.add(Padding(padding:EdgeInsets.only(top: 10.0)));
 
     calender.add(_buildTableCalendar(context));

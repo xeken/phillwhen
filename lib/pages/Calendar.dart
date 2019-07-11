@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:pillwhen/models/PillHistory.dart';
+import 'package:pillwhen/models/User.dart';
 import 'package:pillwhen/widgets/card.dart';
 import 'package:table_calendar/table_calendar.dart';
 
@@ -43,8 +43,8 @@ class _CalendarState extends State<Calendar> with TickerProviderStateMixin {
   void initEvents() {
     _events = {};
     for(var history in widget.pillHistories) {
-      print(removeHMS(history.date));
-      _events[removeHMS(history.date)] = [history];
+      print(removeHMS(history.time));
+      _events[removeHMS(history.time)] = [history];
     }
   }
 

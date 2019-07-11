@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pillwhen/behaviors/emptyScrollBehavior.dart';
-import 'package:pillwhen/models/PillInfo.dart';
+import 'package:pillwhen/models/User.dart';
+
 import 'package:pillwhen/widgets/MyPillItem.dart';
 import 'package:pillwhen/widgets/card.dart';
 
@@ -53,17 +54,17 @@ class _MyPillState extends State<MyPill> {
           padding: EdgeInsets.only(right: 10.0),
           child: PwCard(
               child: MyPillItem(
-                nickname: e.nickName,
-                pillNum: e.pillCount,
-                takingTime: e.dateTime,
+                nickname: e.nickname,
+                pillNum: e.remainEat,
+                takingTime: e.time,
               ),
               onTap: () {
                 Navigator.of(context)
                     .push(MaterialPageRoute(builder: (context) {
                   var a = new PillInfo();
-                  a.nickName = e.nickName;
-                  a.pillCount = e.pillCount;
-                  a.dateTime = e.dateTime;
+//                  a.nickName = 'asdf';
+                  a.remainEat = e.remainEat;
+                  a.time = e.time;
                   pillInfoList.add(a);
                   return MyPillAddInfo(pillInfo: e);
                 }));

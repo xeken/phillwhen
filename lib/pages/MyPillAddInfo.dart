@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pillwhen/models/PillInfo.dart';
+import 'package:pillwhen/models/User.dart';
+
 import 'package:flutter_cupertino_date_picker/flutter_cupertino_date_picker.dart';
 import 'package:intl/intl.dart';
 
@@ -29,8 +30,8 @@ class _MyPillAddInfoState extends State<MyPillAddInfo> {
     super.initState();
     _dateTime = DateTime.now();
 
-    nickNameController = TextEditingController(text: widget.pillInfo.nickName);
-    countController = TextEditingController(text: widget.pillInfo.pillCount != null ? widget.pillInfo.pillCount.toString() : '');
+    nickNameController = TextEditingController(text: widget.pillInfo.nickname);
+    countController = TextEditingController(text: widget.pillInfo.remainEat != null ? widget.pillInfo.remainEat.toString() : '');
   }
 
   @override
@@ -45,7 +46,7 @@ class _MyPillAddInfoState extends State<MyPillAddInfo> {
             Padding(padding: EdgeInsets.only(bottom: 10.0),),
             TextField(
               controller: nickNameController,
-              decoration: InputDecoration(hintText: widget.pillInfo.nickName ?? "약 별명"),
+              decoration: InputDecoration(hintText: widget.pillInfo.nickname ?? "약 별명"),
             ),
             Padding(padding: EdgeInsets.only(bottom: 10.0),),
             TextField(
@@ -98,9 +99,9 @@ class _MyPillAddInfoState extends State<MyPillAddInfo> {
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10.0))),
               onPressed: () {
                 var pillInfo = new PillInfo();
-                pillInfo.nickName = nickNameController.text;
-                pillInfo.pillCount = int.parse(countController.text);
-                pillInfo.dateTime = _dateTime;
+                pillInfo.nickname = nickNameController.text;
+                pillInfo.remainEat = int.parse(countController.text);
+                pillInfo.time = _dateTime;
                 widget.pillInfoList.add(pillInfo);
                 Navigator.pop(context);
               },

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:pillwhen/utils/network_manager.dart';
 import 'models/User.dart';
 import 'pages/Calendar.dart';
 import 'pages/PeopleInfo.dart';
@@ -77,10 +78,12 @@ class _MainState extends State<Main> {
   static const TextStyle pageStyle = TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static List<Widget> _pages;
 
+  NetworkManager networkManager = new NetworkManager();
+
   @override
-  void initState() {
+  void initState() async {
     super.initState();
-    _user = dummyUser();
+    _user = await networkManager.getUser('i12821');
 
     _pages = <Widget>[
       Home(),

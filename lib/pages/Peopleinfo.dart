@@ -17,19 +17,6 @@ class _PeopleInfoState extends State<PeopleInfo> {
   Widget build(BuildContext context) {
     var profile = <Widget>[];
     var profiles = <String>["김대용","김동현","예두해"];
-    User dummy = new User();
-    for(var data in profiles)
-    {
-      dummy.makedata();
-      profile.add(
-          PwCard(onTap:(){var route = new MaterialPageRoute(
-            builder: (BuildContext context) =>
-            new UserInfo(name: dummy.name),
-          );
-          Navigator.of(context).push(route);
-          }, child: PeopleItem(image:Image.network(dummy.profileImageUri).image, name:dummy.name,desc:'test',)));
-      profile.add(Padding(padding:EdgeInsets.only(top: 10.0)));
-    }
 
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 30.0),
