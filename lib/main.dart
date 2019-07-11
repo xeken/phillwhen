@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'models/User.dart';
 import 'pages/Calendar.dart';
-import 'pages/People.dart';
+import 'pages/PeopleInfo.dart';
 import 'pages/home.dart';
 import 'pages/MyPill.dart';
 
@@ -85,10 +85,10 @@ class _MainState extends State<Main> {
       Home(),
       Calendar(pillHistories: _user.pillHistories,),
       MyPill(),
-      People(),
+      PeopleInfo(),
       Text('설정', style: pageStyle,),
     ];
-  }
+}
 
   void _onItemTapped(int index){
     setState(() {
