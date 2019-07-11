@@ -12,6 +12,7 @@ enum CalendarStatus {
 }
 
 class Calendar extends StatefulWidget {
+
   final List<PillHistory> pillHistories;
 
   const Calendar({Key key, this.pillHistories}) : super(key: key);
