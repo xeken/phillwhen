@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pillwhen/behaviors/emptyScrollBehavior.dart';
 import 'package:pillwhen/models/User.dart';
+import 'package:pillwhen/utils/network_manager.dart';
 
 import 'package:pillwhen/widgets/MyPillItem.dart';
 import 'package:pillwhen/widgets/card.dart';
@@ -14,7 +15,7 @@ class MyPill extends StatefulWidget {
 
 class _MyPillState extends State<MyPill> {
   var pillInfoList = Set<PillInfo>();
-
+  NetworkManager networkManager = new NetworkManager();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,6 +44,7 @@ class _MyPillState extends State<MyPill> {
         onPressed: () {
           Navigator.of(context).push(MaterialPageRoute(
               builder: (context) => MyPillAddInfo(
+                  user: networkManager.getUser('i12821'),
                   btnText: "추가하기",
                   pillInfo: PillInfo(),
                   pillInfoList: pillInfoList)));
